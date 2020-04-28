@@ -3,7 +3,6 @@ import { Redirect, RedirectProps } from 'react-router'
 import {Homen} from "../homen"
 import { Route } from 'react-router-dom';
 
-
 import $ from 'jquery'
 
 import "./start.css";
