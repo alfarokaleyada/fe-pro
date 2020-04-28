@@ -30,7 +30,7 @@ class Start extends Component {
         return (
             <div>
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-                <meta http-equiv="refresh" content="10;/Homen"/>
+                <meta http-equiv="refresh" content="10;/homen"/>
                 <meta name="keywords" content="Farok Eyada, home" />
                 <meta name="description" content="Farok Eyada's personal website" />
                 <link href="https://fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" type="text/css" />

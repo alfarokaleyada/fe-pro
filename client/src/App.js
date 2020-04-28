@@ -7,7 +7,7 @@ import {Start} from "./components/start"
 import { NavBar } from './components';
 import Auth from "./components/auth/auth"
 import Test from "./components/test/test1"
-import { homen  } from './components';
+import { Homen  } from './components';
 import { Footer  } from './components';
 
 
@@ -22,9 +22,7 @@ function App() {
       <Route path='/' component={Start} exact/>
       <Container>
       <NavBar/>
- 
-       <Route path='/homen' component={homen} exact />
-
+        <Route path='/homen' component={Homen} exact />
       <Route path='/Registration' component={Registration} exact />
       <Route path='/About' component={About} exact />
       <Route path='/Login' component = {Login} exact />
