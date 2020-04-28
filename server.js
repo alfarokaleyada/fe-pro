@@ -27,16 +27,16 @@ app.use(express.json());
 
 
 // var databaseToUse = "";
+mongoose.Promise = global.Promise;
 
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 //   databaseToUse =
-//     "mongodb:/farokeyada:test123@ds163757.mlab.com:33167/heroku_5rsglhq7";
+//     "mongodb:/eyada:test1234@ds255794.mlab.com:55794/heroku_11t9j4lk";
 // } else {
 //   databaseToUse = "mongodb://localhost/reactBoilerplate";
 // }
-
 
 // const MONGODB_URI = process.env.MONGODB_URI || databaseToUse;
 
