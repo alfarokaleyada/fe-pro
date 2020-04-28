@@ -33,7 +33,6 @@ class Start extends Component {
                 <meta http-equiv="refresh" content="10;/Homen"/>
                 <meta name="keywords" content="Farok Eyada, home" />
                 <meta name="description" content="Farok Eyada's personal website" />
-                <link rel="stylesheet" type="text/css" href="style2.css" />
                 <link href="https://fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" type="text/css" />
                 <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css" />
                 <div className="body">
