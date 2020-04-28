@@ -48,6 +48,10 @@ if (process.env.NODE_ENV === "production") {
   databaseToUse = "mongodb://localhost:27017/expressapp";
 }
 
+app.get('*',(req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
+
 const MONGODB_URI = process.env.MONGODB_URI || databaseToUse;
 
 mongoose.Promise = global.Promise;
