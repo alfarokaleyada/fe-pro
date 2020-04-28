@@ -12,13 +12,10 @@ import { Footer  } from './components';
 
 
 
-
-
-
-
 function App() {
   return (
     <div>
+    <Route path='/homen' component={Homen} exact />
       <Route path='/' component={Start} exact/>
       <Container>
       <NavBar/>
