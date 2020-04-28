@@ -56,7 +56,7 @@ const MONGODB_URI = process.env.MONGODB_URI || databaseToUse;
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(MONGODB_URI);
+// mongoose.connect(MONGODB_URI);
 
 mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser: true,
