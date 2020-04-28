@@ -22,6 +22,18 @@ const app = express();
 // ----------- DB config --------- //
 
 
+app.use(cors())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+
+require('./config/passport')(passport);
+app.use(passport.initialize())
+app.use(passport.session());
 
 
 
@@ -57,18 +69,6 @@ mongoose.connection.on('error', (err) => {
                   
 
 // ----------- DB Middlewares --------- //
-app.use(cors())
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-
-require('./config/passport')(passport);
-app.use(passport.initialize())
-app.use(passport.session());
 
 
 // app.use(function(req, res, next) {
