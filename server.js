@@ -37,23 +37,22 @@ app.use(passport.session());
 
 
 
-// var databaseToUse = "";
+var databaseToUse = "";
+
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  databaseToUse =
+    "mongodb:/eyada:test1234@ds255794.mlab.com:55794/heroku_11t9j4lk";
+} else {
+  databaseToUse = "mongodb://localhost:27017/expressapp";
+}
+
+const MONGODB_URI = process.env.MONGODB_URI || databaseToUse;
+
 mongoose.Promise = global.Promise;
 
-
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-//   databaseToUse =
-//     "mongodb:/eyada:test1234@ds255794.mlab.com:55794/heroku_11t9j4lk";
-// } else {
-//   databaseToUse = "mongodb://localhost/reactBoilerplate";
-// }
-
-// const MONGODB_URI = process.env.MONGODB_URI || databaseToUse;
-
-// mongoose.Promise = global.Promise;
-
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser: true,
