@@ -22,8 +22,7 @@ const app = express();
 // ----------- DB config --------- //
 
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+
 
 
 // var databaseToUse = "";
