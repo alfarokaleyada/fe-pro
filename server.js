@@ -48,9 +48,9 @@ if (process.env.NODE_ENV === "production") {
   databaseToUse = "mongodb://localhost:27017/expressapp";
 }
 
-app.get('*',(req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+// app.get('*',(req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+// });
 
 const MONGODB_URI = process.env.MONGODB_URI || databaseToUse;
 
@@ -87,7 +87,7 @@ mongoose.connection.on('error', (err) => {
 // app.use(routes);
 
 
-app.use('/public', express.static('public'));
+// app.use('/public', express.static('public'));
 // -----------  Routes --------- //
 app.use('/api/v1', v1); // v1 = require('./routes/v1') // hostname/api1/v1/register
 
