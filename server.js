@@ -87,7 +87,7 @@ mongoose.connection.on('error', (err) => {
 // app.use(routes);
 
 
-// app.use('/public', express.static('public'));
+app.use('/public', express.static('public'));
 // -----------  Routes --------- //
 app.use('/api/v1', v1); // v1 = require('./routes/v1') // hostname/api1/v1/register
 
