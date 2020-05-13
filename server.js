@@ -38,10 +38,21 @@ app.use(passport.initialize())
 app.use(passport.session());
 
 // Declare routes right here.
+const routes = require("./routes");
 
 // Prepend / to any route declared inside of routes
+app.use(routes);
+
+var databaseToUse = "";
 
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  databaseToUse =
+    "mongodb:/eyada:test1234@ds255794.mlab.com:55794/heroku_11t9j4lk";
+} else {
+  databaseToUse = "mongodb://localhost:27017/expressapp";
+}
 
 // app.get('*',(req, res) => {
 //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
@@ -116,16 +127,7 @@ module.exports = app;
 
 
 
-var databaseToUse = "";
 
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  databaseToUse =
-    "mongodb:/eyada:test1234@ds255794.mlab.com:55794/heroku_11t9j4lk";
-} else {
-  databaseToUse = "mongodb://localhost:27017/expressapp";
-}
 
 
 // Starts the server to begin listening
