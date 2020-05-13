@@ -38,10 +38,8 @@ app.use(passport.initialize())
 app.use(passport.session());
 
 // Declare routes right here.
-const routes = require("./routes");
 
 // Prepend / to any route declared inside of routes
-app.use(routes);
 
 var databaseToUse = "";
 
