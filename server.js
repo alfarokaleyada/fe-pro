@@ -29,7 +29,9 @@ app.use(express.json());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+ 
 
+// test
 
 require('./config/passport')(passport);
 app.use(passport.initialize())
