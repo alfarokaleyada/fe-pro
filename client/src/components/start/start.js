@@ -43,7 +43,7 @@ class Start extends Component {
                     </div>
                 </div>
                 <div className="parent">
-                    <h1 className="right uc">Farok Eayda</h1> 
+                    <h1 className="right uc">Farok Eyada</h1> 
                     <ul className="child hover fade-in">
                     <p className="all25" style={{color: '#50E3C2'}} > “ Reality must be more beautiful, honest and clear than   <span>imagination</span>. ”</p>
                         {/* <li className="all25"><a href="portfolio.html">portfolio</a></li>
