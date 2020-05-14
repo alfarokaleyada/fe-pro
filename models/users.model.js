@@ -11,8 +11,6 @@ const UserSchema = Schema({
     joined: {type: Date, default: new Date()}
 })
 
-
-
 // Before password save you should .. 
 UserSchema.pre('save', async function(next) {
     // check new account or password is modifdied
@@ -33,7 +31,6 @@ UserSchema.pre('save', async function(next) {
 
 });
 
-
 // --------- match passwrod on mode -------- //
 
 // isPassMatch name of func / compare bet passwrod and hashed
@@ -47,15 +44,12 @@ UserSchema.methods.isPassMatch = function (password, hashed , callback) {
     });
 
 };
-
 // remove password from retun info to more scre
 UserSchema.methods.toJSON = function () {
     const UserObject = this.toObject();  // object of user
     delete UserObject.password;
     return UserObject;
 };
-
-
 
 const User = mongoose.model('User', UserSchema); // User as name
 module.exports = User;

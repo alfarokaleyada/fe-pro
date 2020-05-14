@@ -5,7 +5,6 @@ const User = require('../models/users.model');
 const jwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 
-
 // ---------- create new function pass passport
 module.exports = (passport) => {
     let config = {};

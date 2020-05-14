@@ -36,129 +36,45 @@ var upload = multer({
     }
 });
 
-
 // -------- user controller   ------- //
 
+    /**
+     * sign up logic
+     */
+    archController.get =   async  (req, res, next) => {
+        const {user} = req ;
+        const query = {
+            user :user._id           
+        }
+        console.log("archController.get one")
 
-// router.post('/user-profile', upload.single('profileImg'), (req, res, next) => {
-//     const url = req.protocol + '://' + req.get('host')
-//     const user = new Arch({
-//         _id: new mongoose.Types.ObjectId(),
-//         name: req.body.name,
-//         profileImg: url + '/public/' + req.file.filename
-//     });
-//     user.save().then(result => {
-//         res.status(201).json({
-//             message: "User registered successfully!",
-//             userCreated: {
-//                 _id: result._id,
-//                 profileImg: result.profileImg
-//             }
-//         })
-//     }).catch(err => {
-//         console.log(err),
-//             res.status(500).json({
-//                 error: err
-//             });
-//     })
-// })
+    try{
+        const result = await Arch.find(query);
+        console.log(result)
+        return res.send ({
+            arch: result 
+        })
 
-// router.get("/", (req, res, next) => {
-//     User.find().then(data => {
-//         res.status(200).json({
-//             message: "User list retrieved successfully!",
-//             users: data
-//         });
-//     });
-// });
+    } catch(e) {
+        next(e);
 
-
-
-
-// -------- user controller   ------- //
-
-/**
- * sign up logic
- */
-archController.get =   async  (req, res, next) => {
-    const {user} = req ;
-    const query = {
-        user :user._id           
     }
+    console.log(result)
 
-    console.log("archController.get one")
-
-   try{
-      const result = await Arch.find(query);
-      console.log(result)
-      return res.send ({
-        arch: result 
-      })
-
-   } catch(e) {
-       next(e);
-
-   }
-   console.log(result)
-
-};
+    };
 
 console.log("Before archController.Post ")
 
-
-
+ // ------------ Post ------------ //
  archController.create =   router.post ('/arch', upload.single('profileImg'), async (req, res, next) => {
     const url = req.protocol + '://' + req.get('host')
     const {name, place , area,description ,image ,Day, created,profileImg,hight } = req.body;
 
     const newArach = new Arch({
-        name,
-        place,
-        area,
-        description,
-        image,
-        hight,
-        created,
-        Day,
+        name,place,area,description,image,hight,created,Day,
         user:req.user,
         profileImg: url + '/public/' + req.file.filename
     });
-
-
-    // const storage = multer.diskStorage({
-    //     destination: (req, file, cb) => {
-    //         cb(null, DIR);
-    //     },
-    //     filename: (req, file, cb) => {
-    //         const fileName = file.originalname.toLowerCase().split(' ').join('-');
-    //         console.log(fileName)
-
-    //         cb(null, uuidv4() + '-' + fileName)
-    //         console.log(fileName)
-
-    //     }
-    // });
-    
-
-
-    // var upload = multer({
-    //     storage: storage,
-    //     fileFilter: (req, file, cb) => {
-    //         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-    //             cb(null, true);
-    //         } else {
-    //             cb(null, false);
-    //             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-    //         }
-    //     }
-    // });
-
-
-
-
-
-
-    //  console.log("archController.Post Two")
 
      try {
         const saved = await newArach.save();
@@ -168,39 +84,8 @@ console.log("Before archController.Post ")
         })
           }catch(e){
             next(e);
-        
         }
-    
-    })
-
-
-//   newArach.save().then(result => {
-//         res.status(201).json({
-//             message: "User registered successfully!",
-//             userCreated: {
-//                 _id: result._id,
-//                 profileImg: result.profileImg
-//             }
-//         })
-//     }).catch(err => {
-//         console.log(err),
-//             res.status(500).json({
-//                 error: err
-
-//             });
-
-//     })
-// })
-
-
-
-
-
-
-
-
-
-
+     })
 
 
  // ------------ update ------------ //
@@ -213,17 +98,7 @@ console.log("Before archController.Post ")
 
 // try do update
     try {
-
-        // check if the user has auth
-        // const check = await Arch.findOne({_id: archId});
-        // if (!check.equals(req.user._id)) {
-        //     const err = new Error('this arch opject not for you!')
-        //     err.status = 401;
-        //     throw err
-
-            
-        // }else{
-        
+               
         // update if it is the same user    
         const arch = await Arch.update({_id: archId}, {name, place , area,description ,image , created})
         res.send({
@@ -252,21 +127,7 @@ console.log("Before archController.Post ")
  
 }
 
-//route to delete Fruit
-// rchController.destroy = router.post('/arch/:arch_id', (req, res, next) => {
-// 	let id = mongoose.Types.ObjectId(req.body._id);
-// 	db.Arch
-// 		.remove({ _id: id })
-// 		.then((Arch) => {
-// 			res.json(Arch);
-// 		})
-// 		.catch((err) => {
-// 			res.json(err);
-// 		});
-// });
 
-
- // ------- regusiter in funcation ------- // 
 
 
 
