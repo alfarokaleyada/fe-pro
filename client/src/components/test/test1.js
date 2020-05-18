@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect, RedirectProps } from 'react-router'
-import {Homen} from "../homen"
+import {Home} from "../home"
 import { Route } from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ import $ from 'jquery'
 
 import "./test1.css";
 
-const home = <Route path='/' component={Homen} exact />
+const home = <Route path='/' component={Home} exact />
 
 class Test extends Component {
     

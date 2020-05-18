@@ -1,39 +1,120 @@
-import React, { Component } from 'react';
-import "./home.css";
+import React, { useState } from 'react';
+import "./homen.css";
 
-
-class Home extends Component {
-    render() { 
-        return (
-            <div>
-            <div style={{ backgroundImage: 'url("https://i.ibb.co/N1bkG25/IMG-3122.jpg")'}}> </div>
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" rel="stylesheet" />
-            <div className="super1-container">
-            <div className="left-content-container">
-                <div className="quote1">
-                <p>
-                    “ Reality must be more beautiful, honest and clear than   <span>imagination</span>. ”
-                </p>
-                </div>
-                <div className="titleHome">
-                <h1>Farok Eyada</h1>
-                <p>Designer</p>
-                <p>Developer</p>
-                <p>engineer</p>
-                </div>
-                <div className="content1">
-                <p><span>FE Architecture</span> It is a North American team that provide architectural design services.</p>
-                <p>We provide a special online service while you are sitting in your home, we provide drawing services, interior and exterior designs, and 2D and 3D designs...</p> 
-                </div>
-                <div className="learn-more1">
-                <a href="https://en.wikipedia.org/wiki/Elon_Musk">Get Started FE Designer!!</a>
-                </div>
-            </div>
-            </div>
-    </div>
-        );
-    }
-}
+const Home = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
  
+  return (
+    <div>
+      
+     <header>
+          <div className="container">
+            <div className="intro-text">
+            {/* <div className="intro-heading" >We are the best Team of</div> */}
+
+              <div className="intro-lead-in" style={{color: '#777'}} >Architect</div>
+              <a href="/Registration" className="page-scroll btn btn-xl">GET STARTED FE DESIGNER!!</a>
+            </div>
+          </div>
+        </header>
+        {/* Services Section */}
+        <section id="services">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 text-center">
+                <h2 className="section-heading">Services</h2>
+                <h3 className="section-subheading text-muted">The services provided are high quality, accurate and adjustable.</h3>
+              </div>
+            </div>
+            <div className="row text-center">
+              <div className="col-md-4">
+                <span className="fa-stack fa-4x">
+                  <i className="fa fa-circle fa-stack-2x text-primary" />
+                  <i className="glyphicon glyphicon-tree-conifer" />
+                </span>
+                <h4 className="service-heading">Concept & Idea</h4>
+                <p className="text-muted"> Presenting ideas and suggestions that help to choose the best design style.</p>
+              </div>
+              <div className="col-md-4">
+                <span className="fa-stack fa-4x">
+                  <i className="fa fa-circle fa-stack-2x text-primary" />
+                  <i className="glyphicon glyphicon-heart" />
+                </span>
+                <h4 className="service-heading">Interior Design</h4>
+                <p className="text-muted">Interior designs for all places and redesign all you need to send a picture and dimensions of the places you want to design.</p>
+              </div>
+              <div className="col-md-4">
+                <span className="fa-stack fa-4x">
+                  <i className="fa fa-circle fa-stack-2x text-primary" />
+                  <i className="glyphicon glyphicon-tint" />
+                </span>
+                <h4 className="service-heading">Exterior design</h4>
+                <p className="text-muted">The design includes both horizontal projectors and sections, and we also offer 3D and 3D graphics.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Portfolio Grid Section */}
+        <section id="portfolio" className="bg-light-gray">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12 text-center">
+                <h2 className="section-heading">Samples</h2>
+                <h3 className="section-subheading text-muted">Some of our works.</h3>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal1" className="portfolio-link" data-toggle="modal">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fa fa-plus fa-3x" />
+                    </div>
+                  </div>
+                  <img src="https://i.ibb.co/PhnNSwF/2020-04-26-15-19-37t.png" className="img-responsive" alt="" />
+                </a>
+                <div className="portfolio-caption">
+                  <h4>3D model </h4>
+                  <p className="text-muted"> Design</p>
+                </div>
+              </div>
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal2" className="portfolio-link" data-toggle="modal">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fa fa-plus fa-3x" />
+                    </div>
+                  </div>
+                  <img src=" https://i.ibb.co/4PGY7Vx/IMG-3660.jpg" className="img-responsive" alt="" />
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Section</h4>
+                  <p className="text-muted"> Design</p>
+                </div>
+              </div>
+         
+              <div className="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal6" className="portfolio-link" data-toggle="modal">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <i className="fa fa-plus fa-3x" />
+                    </div>
+                  </div>
+                  <img src="https://i.ibb.co/LtprDMw/IMG-3122.jpg" className="img-responsive" alt="" />
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Sketch</h4>
+                  <p className="text-muted"> Design</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+     
+    
+    </div>
+  );
+}
+
 export {Home};

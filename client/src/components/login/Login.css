@@ -1,21 +1,8 @@
-/* * {
-    margin : 0;
-    padding : 0;
-    border : 0;
-  }
-   */
-  /* body {
-    font-family : 'Open Sans', sans-serif;
-    color : white;
-    font-size : 16px;
-  } */
-  
+
   
   .super-containerLog {
     /* background :linear-gradient(rgba(80,227,194,.3),rgba(80,227,194,.3)),    url(https://i.ibb.co/N1bkG25/IMG-3122.jpg) to no-repeat; */
         background-image:url(https://i.ibb.co/5W86NQ2/eaVEyj.jpg) ;
-
-    
     background-position: center;
     background-repeat: no-repeat;
     background-size: 2000px 1200px;
@@ -36,12 +23,10 @@
   }
   
   .quote {
-    
     margin : 60px 80px 60px 80px;
     font-size : 28px;
     font-weight : 300;
     line-height : 40px;
-    
   }
   
   .quote>p>span {
@@ -91,43 +76,12 @@
     font-weight : 700;
   }
   
-  /* .learn-more {
-    display : inline-block;
-    border : 2px solid white;
-    margin-left : 80px;
-    margin-top : 30px;
-    
-    text-transform : uppercase;
-    font-size : 12px;
-    font-weight : 600;
-    letter-spacing : 2px;
-    padding : 15px 30px;
-  }
-  
-  .learn-more a {
-    color : white;
-    text-decoration : none;
-  }
-  
-  .learn-more a:visited, .learn-more a:active {
-    color : white;
-  }
-  
-  .learn-more:hover {
-    background-color :  #50E3C2;
-  } */
-/*   
-  .form {
-    margin: 20px;
-  } */
-  
   .form input {
     display: block;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 50%;
   }
-
 
   button {
     color: rgb(0, 0, 0);
@@ -139,5 +93,4 @@
     margin-bottom: 5px;
     margin-top: 50px;
     width: 40%;
-
 }

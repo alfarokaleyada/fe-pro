@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import { Redirect, RedirectProps } from 'react-router'
-import {Homen} from "../homen"
+import {Home} from "../home"
 import { Route } from 'react-router-dom';
-
-import $ from 'jquery'
-
 import "./start.css";
-
-const home = <Route path='/' component={Homen} exact />
+const home = <Route path='/' component={Home} exact />
 
 class Start extends Component {
     
@@ -29,7 +24,7 @@ class Start extends Component {
         return (
             <div>
                 <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
-                <meta http-equiv="refresh" content="10;/homen"/>
+                <meta http-equiv="refresh" content="10;/home"/>
                 <meta name="keywords" content="Farok Eyada, home" />
                 <meta name="description" content="Farok Eyada's personal website" />
                 <link href="https://fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" type="text/css" />

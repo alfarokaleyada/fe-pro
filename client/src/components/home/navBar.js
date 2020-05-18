@@ -1,39 +1,20 @@
 import React, { useState } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+import { Collapse,Navbar,NavbarToggler,NavbarBrand,Nav,NavItem,NavLink,NavbarText
 } from 'reactstrap';
 
-
-
+import "./homen.css";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
-
-
-  
-
-  
+   
   return (
-
 
     <div>
 
       
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/Homen">FE Architect</NavbarBrand>
+        <NavbarBrand href="/Home">FE Architect</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
