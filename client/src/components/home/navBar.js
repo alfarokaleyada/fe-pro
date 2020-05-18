@@ -14,7 +14,7 @@ const NavBar = (props) => {
 
       
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/Home">FE Architect</NavbarBrand>
+        <NavbarBrand href="/home">FE Architect</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -22,7 +22,7 @@ const NavBar = (props) => {
               <NavLink href="/Registration">Registration</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/Test">Projects</NavLink>
+              <NavLink href="/projects">Projects</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/about">About us</NavLink>
