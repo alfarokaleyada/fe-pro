@@ -18,11 +18,11 @@ function App() {
       <Container>
       <NavBar/>
         <Route path='/home' component={Home} exact />
-      <Route path='/Registration' component={Registration} exact />
-      <Route path='/About' component={About} exact />
-      <Route path='/Login' component = {Login} exact />
-      <Route path='/Auth' component={Auth} exact / >
-      <Route path='/Test' component={Test} exact/>
+      <Route path='/registration' component={Registration} exact />
+      <Route path='/about' component={About} exact />
+      <Route path='/login' component = {Login} exact />
+      <Route path='/auth' component={Auth} exact / >
+      <Route path='/projects' component={Test} exact/>
       <Footer/>
       </Container>
     </div>

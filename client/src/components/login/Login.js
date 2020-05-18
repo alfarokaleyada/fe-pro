@@ -81,7 +81,6 @@ class Login extends Component {
                 .catch(error => {
                         console.log("reg err",error );
                 });
-
             }
 
 
